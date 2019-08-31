@@ -1,0 +1,116 @@
+
+CREATE TABLE  user (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  user_name VARCHAR(35) NOT NULL,
+  password VARCHAR(35) NOT NULL,
+  full_name VARCHAR(35) NOT NULL,
+  department VARCHAR(20) NULL,
+  phone int NULL,
+  address VARCHAR(35) NULL
+)
+
+
+CREATE TABLE  Category (
+  category_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  name VARCHAR(35) NOT NULL,
+  type VARCHAR(25) NOT NULL,
+  description VARCHAR(60) NULL
+
+)
+
+
+CREATE TABLE  item (
+  item_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  category_id INT NOT NULL,
+  name VARCHAR(35) NOT NULL,
+  quantity INT NOT NULL,
+
+
+  CONSTRAINT item_fk FOREIGN KEY(category_id)
+  REFERENCES category(category_id)
+  ON UPDATE CASCADE ON DELETE CASCADE
+)
+
+
+
+CREATE TABLE  purchase_order (
+  purchase_order_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  item_id int NOT NULL,
+  vendor VARCHAR(35) NULL,
+  unit_price VARCHAR(35) NULL,
+  quantity INT NULL,
+  total INT NULL,
+  amount VARCHAR(35) NULL,
+  created_date DATETIME NOT NULL,
+  pre_by_name VARCHAR(35) NOT NULL,
+  pre_by_title VARCHAR(35) NULL,
+  appr_by_name VARCHAR(35) NOT NULL,
+  appr_by_title VARCHAR(35) NULL,
+  author_by_name VARCHAR(35) NOT NULL,
+  author_by_title VARCHAR(35) NULL,
+
+    CONSTRAINT purchase_order_fk
+    FOREIGN KEY (item_id)
+    REFERENCES item (item_id)
+    ON UPDATE CASCADE ON DELETE CASCADE
+  )
+
+
+
+CREATE TABLE  orderr (
+  order_id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  purchase_order_id INT NOT NULL,
+  number INT NOT NULL,
+  creation_date DATETIME NOT NULL,
+  description VARCHAR(60) NULL,
+
+  CONSTRAINT orderr_fk
+    FOREIGN KEY (purchase_order_id)
+    REFERENCES purchase_order (purchase_order_id)
+    ON UPDATE CASCADE ON DELETE CASCADE
+    )
+
+
+
+
+CREATE TABLE  Store_Request (
+  id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  item_id INT NOT NULL,
+  quantity INT NOT NULL,
+  department VARCHAR(35) NULL,
+  created_date DATETIME NOT NULL,
+  requested_by VARCHAR(35) NOT NULL,
+  approved_by VARCHAR(35) NULL,
+  approved_date DATETIME NULL,
+  occupation CHAR(6) NULL,
+ 
+
+  CONSTRAINT Store_Request_item_fk
+    FOREIGN KEY (item_id)
+    REFERENCES item (item_id)
+  ON UPDATE CASCADE ON DELETE CASCADE
+
+    )
+
+
+
+
+CREATE TABLE  item_order (
+   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+   item_id INT NOT NULL,
+   order_id INT NOT NULL,
+   name VARCHAR(35) NOT NULL,
+   quantity INT NOT NULL,
+   description VARCHAR(35) NOT NULL,
+
+
+  CONSTRAINT item_order_fk FOREIGN KEY(order_id)
+    REFERENCES orderr (order_id)
+     ON UPDATE CASCADE ON DELETE CASCADE,
+
+  CONSTRAINT item_order2_fk FOREIGN KEY(item_id)
+    REFERENCES item (item_id)
+    ON UPDATE CASCADE ON DELETE CASCADE
+
+    )
+
