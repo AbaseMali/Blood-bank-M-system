@@ -71,8 +71,8 @@ if (!isset($_SESSION['username'])) {
                             <td> {$user['email']}</td>
                             <td> {$user['hospital']}</td>
                             <td> {$user['unit']}</td>
-                            <td> <a href='requests.php?id={$user['request_id']}'  class=\"btn btn-success\">Update</a></td>  
-                            <td> <a href='requests.php?id={$user['request_id']}'  class=\"btn btn-danger\" onclick = 'return confirm(\"Are you You sure\")' >Delete</a></td>
+                            <td> <a href='updateRequests.php?id={$user['request_id']}'  class=\"btn btn-success\">Update</a></td>  
+                            <td> <a href='deleteRequests.php?id={$user['request_id']}'  class=\"btn btn-danger\" onclick = 'return confirm(\"Are you You sure\")' >Delete</a></td>
                             
                             </tr>
 
