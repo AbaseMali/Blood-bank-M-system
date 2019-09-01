@@ -119,7 +119,7 @@ if (isset($_POST['submit'])) {
                                 <input type="password" class="form-control" name="password" placeholder="Password(min. 6 characters)" required="true" pattern=".{6,}">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group">   
                             <label class="col-md-2 label-control">Re-Password</label>
                             <div class="col-md-10">
                                 <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" required="true" pattern=".{6,}">

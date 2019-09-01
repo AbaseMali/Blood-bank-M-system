@@ -95,7 +95,7 @@ include 'config.php';
                         <div class="panel">
                                 
                             <div class="text-center text-primary panel-heading">
-                                <h1><img src="Admin\img\hash.png" width="120rm" height="120rm" alt=""></h1>
+                                <h1><img src="hush.png" width="120rm" height="120rm" alt=""></h1>
                             </div>
 
                             <div class="panel-body">
