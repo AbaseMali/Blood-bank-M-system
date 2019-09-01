@@ -9,7 +9,7 @@ if (isset($_POST['Register'])) {
     $fname = $_POST['fname'];
     $gender = $_POST['gender'];
     $job = $_POST['job'];
-    $Mstatus = $_POST['Mstatus']; 
+    $Mstatus = $_POST['Mstatus'];
     $blood_type = $_POST['blood_type'];
     $email = $_POST['email'];
     $contact =  $_POST['contact'];
@@ -32,3 +32,6 @@ if (isset($_POST['Register'])) {
 header('location:donor.php');
 
 ?>
+
+
+

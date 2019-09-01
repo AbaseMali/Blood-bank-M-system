@@ -3,7 +3,14 @@
 <!-- BEGIN HEAD -->
 <?php
 include('lab_headerScript.php');
+session_start();
+if(!isset($_SESSION['username'])){
+echo "<script>window.open('../index.php','_self')</script>";
+}
+else{
+include('../Admin/connection.php');
 ?>
+
 
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
     <div class="page-wrapper">
@@ -118,3 +125,5 @@ include('lab_headerScript.php');
 </body>
 
 </html>
+
+                        <?php } ?>

@@ -3,7 +3,14 @@
 <!-- BEGIN HEAD -->
 <?php
 include('include/headerScript.php');
-?>
+session_start();
+if (!isset($_SESSION['username'])) {
+    echo "<script>window.open('../index.php','_self')</script>";
+} else {
+
+    include('connection.php');
+
+    ?>
 
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
     <div class="page-wrapper">
@@ -126,3 +133,5 @@ delete
 </body>
 
 </html>
+
+                                    <?php } ?>

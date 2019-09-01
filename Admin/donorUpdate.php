@@ -32,9 +32,9 @@ $user = mysqli_fetch_array($res);
 
               <div class="card-body">
 
-                <form action="donorList.php" method="POST">
+                <form action="donorUpdateCode.php" method="POST">
                   <div class="row text-dark">
-                    <input type="hidden" name='id' value="<?php echo $user['id']; ?>">
+                    <input type="hidden" name='donor_id' value="<?php echo $user['donor_id']; ?>">
 
                     <div class="form-group col-6">
                       <label>First Name </label>
@@ -96,7 +96,7 @@ $user = mysqli_fetch_array($res);
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" name="btn" value="update" class="btn btn-primary">Save</button>
+                    <button type="submit" name="btnupdate" value="update" class="btn btn-primary">Update</button>
                   </div>
                 </form>
 
@@ -126,9 +126,3 @@ $user = mysqli_fetch_array($res);
 
 </html>
 
-
-
-<?php
-
-if ($_POST['btn'] =='update');
-?>
