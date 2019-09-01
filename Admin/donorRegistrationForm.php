@@ -16,9 +16,15 @@
           <div class="modal-body">
 
             <div class="form-group">
-              <label>First Name </label>
+              <label>Full Name </label>
               <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter first name" required>
             </div>
+
+            <div class="form-group col-6">
+            <label>Date & Time </label> 
+            <input type="datetime-local" id="contact" name="dateTime" class="form-control"   required>
+          </div> 
+
             <!-- Gender -->
             <div class="form-group container">
               <label>Gender</label>

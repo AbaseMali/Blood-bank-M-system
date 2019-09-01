@@ -7,12 +7,13 @@ include('connection.php');
 ?>
 
 
-<div class="row  ">
+
 	<div class="col-12">
 		<table class="table table-bordered">
 			<tr>
-				<th>Donor ID</th>
+				<th>Id</th>
 				<th>FullName</th>
+				<th>DateTime </th>
 				<th>Gender</th>
 				<th>Job</th>
 				<th>Marital Status</th>
@@ -32,6 +33,7 @@ include('connection.php');
 				<tr>
 					<td>$i</td>
 					<td> {$row['full_name']} </td>
+					<td> {$row['dateTime']} </td>
 					<td> {$row['gender']} </td>
 					<td>{$row['job']} </td>
 					<td>{$row['martial_status']} </td>
@@ -67,11 +69,12 @@ include('connection.php');
 
 			$donor_id = $row1['donor_id'];
 			$full_name = $row1['full_name'];
+			$dateTime = $row1['dateTime'];
 			$gender = $row1['gender'];
 			$blood_type = $row1['blood_type'];
 			$unit = $row1['unit'];
 
-			$query = mysqli_query($conn, "INSERT INTO `lab`(`labid`, `donor_id`, `fullname`, `gender`, `blood_type`, `unit`, `status`) VALUES(null,'$donor_id','$full_name','$gender','$blood_type','$unit','Sended')");
+			$query = mysqli_query($conn, "INSERT INTO `lab`(`labid`, `donor_id`, `fullname`,`dateTime`, `gender`, `blood_type`, `unit`, `status`) VALUES(null,'$donor_id','$full_name','$dateTime','$gender','$blood_type','$unit','Sended')");
 
 			if ($query) {
 
@@ -83,4 +86,3 @@ include('connection.php');
 
 		?>
 	</div>
-</div>

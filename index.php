@@ -78,7 +78,7 @@ include 'config.php';
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Blood Bank Management System</title>
+	<title>BBMS</title>
 	<link rel="stylesheet" href="styles/bootstrap/metro-theme.css">
     <link rel="stylesheet" href="styles/font-awesome/css/font-awesome.min.css">
     <script src="js/jquery-2.1.4.min.js"></script>

@@ -48,8 +48,10 @@ $donor = mysqli_query($conn, "SELECT * FROM lab where status='Negative' or statu
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Name</th>
-      <th scope="col">Result</th>
       <th scope="col">Date</th>
+      <th scope="col">Result</th>
+      <th scope="col">Action</th>
+      
       
     </tr>
   </thead>
@@ -58,8 +60,10 @@ $donor = mysqli_query($conn, "SELECT * FROM lab where status='Negative' or statu
     <tr>
       <th scope="row"><?php echo $row['labid']; ?></th>
       <td><?php echo $row['fullname']; ?></td>
+      <td><?php echo $row['dateTime']; ?></td>
       <td><?php echo $row['status']; ?></td>
-     
+      <td><a class="btn btn-danger" href="deletelab.php?labidp=<?php echo $row['labid']; ?>" onclick='return confirm("Are you You sure to delete")'>delete</a></td>
+
     </tr>
    
   </tbody>

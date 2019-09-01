@@ -7,6 +7,7 @@ session_start();
 if (isset($_POST['Register'])) {
 
     $fname = $_POST['fname'];
+    $dateTime=$_POST['dateTime'];
     $gender = $_POST['gender'];
     $job = $_POST['job'];
     $Mstatus = $_POST['Mstatus'];
@@ -15,9 +16,9 @@ if (isset($_POST['Register'])) {
     $contact =  $_POST['contact'];
     $unit = $_POST['unit'];
 
-    $q = "INSERT INTO `donor`(`full_name`, `gender`, `job`, `martial_status`, `blood_type`, `email`, `contact_no`,`unit`) 
+    $q = "INSERT INTO `donor`(`full_name`,`dateTime`, `gender`, `job`, `martial_status`, `blood_type`, `email`, `contact_no`,`unit`) 
     VALUES 
-    ('$fname','$gender','$job','$Mstatus','$blood_type','$email','$contact','$unit')";
+    ('$fname','$dateTime','$gender','$job','$Mstatus','$blood_type','$email','$contact','$unit')";
 
 
     if (!mysqli_query($conn, $q)) {

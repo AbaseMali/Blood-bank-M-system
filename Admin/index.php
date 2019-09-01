@@ -140,7 +140,7 @@ include('connection.php');
 							<div class="info-box bg-success">
 								<span class="info-box-icon "><i class="material-icons">person</i></span>
 								<div class="info-box-content">
-									<h5> Total Stored Units</h5>
+									<h5> Requested Units</h5>
 									<?php
 									$query = "SELECT SUM(unit) FROM request";
 									$query_run = mysqli_query($conn, $query);

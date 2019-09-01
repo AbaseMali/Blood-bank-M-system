@@ -1,6 +1,6 @@
 <!-- start sidebar menu -->
  			<div class="sidebar-container">
- 				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+ 				<div class="sidemenu-container  navbar-collapse collapse fixed-menu">
 	                <div id="remove-scroll">
 	                    <ul class="sidemenu  page-header-fixed" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
 	                        <li class="sidebar-toggler-wrapper hide">

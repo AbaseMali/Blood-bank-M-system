@@ -42,9 +42,9 @@ include('../Admin/connection.php');
                                     <th>Lab ID</th>
                                     <th>Donor ID</th>
                                     <th>FullName</th>
+                                    <th>dateTime</th>
                                     <th>Gender</th>
                                     <th>Blood Type</th>
-                                    <th>Date</th>
                                     <th>Unit</th>
                                     <th>Negative</th>
                                     <th>Positive</th>
@@ -56,16 +56,13 @@ include('../Admin/connection.php');
                                         <td><?php echo $row['labid']; ?> </td>
                                         <td><?php echo $row['donor_id']; ?> </td>
                                         <td><?php echo $row['fullname']; ?> </td>
+                                        <td><?php echo $row['dateTime']; ?></td>
                                         <td><?php echo $row['gender']; ?> </td>
                                         <td><?php echo $row['blood_type']; ?> </td>
-                                        <td><?php
-                                                $dt = new DateTime();
-                                                echo $dt->format('Y-m-d H:i:s');
-                                                ?> </td>
                                         <td><?php echo $row['unit']; ?> </td>
                                         <td><a class="btn btn-success" href="lab_request.php?labidn=<?php echo $row['labid']; ?>">Negative</a></td>
                                         <td><a class="btn btn-warning" href="lab_request.php?labidp=<?php echo $row['labid']; ?>">Positive</a></td>
-                                        <td><a class="btn btn-danger" href="deletelab.php?labidp=<?php echo $row['labid']; ?>">delete</a></td>
+                                        <td><a class="btn btn-danger" href="deletelab.php?labidp=<?php echo $row['labid']; ?>" onclick='return confirm("Are you You sure to delete")'>delete</a></td>
 
                                     </tr>
                                 <?php } ?>
