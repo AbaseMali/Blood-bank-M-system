@@ -25,29 +25,7 @@ require_once('connection.php');
                         <input type="text" name="name" class="form-control" value="<?php echo $user['full_name']?>">
                     </div>
  <?php } ?>
-                    <div class="row" >
-                    <div class="col-2">
-                    </div>
-
-                    <!-- Default inline 1-->
-                    <div class="col-3 custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="custom-control-input" id="defaultInline1">
-                        <label class="custom-control-label" for="defaultInline1">hp</label>
-                    </div>
-
-                    <!-- Default inline 2-->
-                    <div class="col-3 custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="custom-control-input" id="defaultInline2">
-                        <label class="custom-control-label" for="defaultInline2">hptt</label>
-                    </div>
-
-                    <!-- Default inline 3-->
-                    <div class="col-2 custom-control custom-checkbox custom-control-inline">
-                        <input type="checkbox" class="custom-control-input" id="defaultInline3">
-                        <label class="custom-control-label" for="defaultInline3">CA</label>
-                    </div>
-
-                    </div>
+                 
 
                 </div>
                 <div class="modal-footer">

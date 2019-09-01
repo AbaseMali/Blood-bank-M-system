@@ -22,8 +22,8 @@
     <div class="form-group container">
             <label>Gender</label>
             <select class="form-control" name="gender">
-              <option value="M">Male</option>
-              <option class="F">Female</option>
+              <option >Male</option>
+              <option >Female</option>
             </select>
           </div>
           <!-- Gender end --> 
@@ -63,9 +63,13 @@
             <input type="number" name="contact" id="contact" class="form-control" placeholder="Enter contact" required>
           </div>
 
-          <div class="form-group">
-            <label>Unit</label>
-            <input type="text" name="unit" id="unit" class="form-control" placeholder="Enter Unit" required>
+         
+          <div class="form-group col-md-6">
+            <label for="inputState">Unit</label>
+            <select id="inputState" name="unit" class="form-control" required>
+              <option selected>1000ml</option>
+              <option>500ml</option>
+            </select>
           </div>
 
         </div>
