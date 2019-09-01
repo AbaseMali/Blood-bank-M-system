@@ -28,7 +28,7 @@
 	                        </li>
 						
 							<li class="nav-item start ">
-	                            <a href="request.php" class="nav-link nav-toggle">
+	                            <a href="request.php" onclick='return confirm("Have you checked the blood availability")' class="nav-link nav-toggle">
 	                                <i class="material-icons">local_hotel</i>
 	                                <span class="title">Requests</span>
 	                            </a>

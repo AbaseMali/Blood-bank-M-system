@@ -54,7 +54,6 @@ if (!isset($_SESSION['username'])) {
                                                 <?php
                                                     include('connection.php');
                                                     $res = mysqli_query($conn, "SELECT * FROM request");
-                                                    $date = date('Y/m/d H');
                                                     $i = 1;
                                                     while ($user = mysqli_fetch_array($res)) {
 
@@ -66,7 +65,7 @@ if (!isset($_SESSION['username'])) {
                             <td> {$user['name']}</td>
                             <td> {$user['gender']}</td>
                             <td> {$user['blood_group']}</td>
-                            <td> $date</td>
+                            <td> {$user['date_time']} </td>
                             <td> {$user['phone']}</td>
                             <td> {$user['email']}</td>
                             <td> {$user['hospital']}</td>

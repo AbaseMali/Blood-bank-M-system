@@ -19,6 +19,7 @@ if (isset($_POST['Register'])) {
     $name = $_POST['name'];
     $gender = $_POST['gender'];
     $blood_type = $_POST['blood_type'];
+    $dateTime=$_POST['dateTime'];
     $contact = $_POST['contact'];
     $email = $_POST['email']; 
     $hospital = $_POST['hospital'];
@@ -26,9 +27,9 @@ if (isset($_POST['Register'])) {
     
    
 
-    $q = "INSERT INTO `request`(`name`, `gender`, `blood_group`,  `phone`, `email`, `hospital`, `unit`)
+    $q = "INSERT INTO `request`(`name`, `gender`, `blood_group`,`date_time`,`phone`, `email`, `hospital`, `unit`)
      VALUES
-    ('$name','$gender','$blood_type','$contact','$email','$hospital','Request')";
+    ('$name','$gender','$blood_type','$dateTime','$contact','$email','$hospital','$unit')";
 
 
     if (!mysqli_query($conn, $q)) {

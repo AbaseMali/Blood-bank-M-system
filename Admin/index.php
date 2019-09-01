@@ -121,7 +121,7 @@ include('connection.php');
 							<div class="info-box bg-success">
 								<span class="info-box-icon "><i class="material-icons">person</i></span>
 								<div class="info-box-content">
-									<h5> Total Units</h5>
+									<h5> Total Stored Units</h5>
 									<?php
 									$query = "SELECT SUM(unit) FROM donor";
 									$query_run = mysqli_query($conn, $query);
@@ -135,6 +135,24 @@ include('connection.php');
 							<!-- /.info-box -->
 						</div>
 						<!-- /.col -->
+
+						<div class="col-xl-3 col-md-6 col-12">
+							<div class="info-box bg-success">
+								<span class="info-box-icon "><i class="material-icons">person</i></span>
+								<div class="info-box-content">
+									<h5> Total Stored Units</h5>
+									<?php
+									$query = "SELECT SUM(unit) FROM request";
+									$query_run = mysqli_query($conn, $query);
+
+									$row = mysqli_fetch_array($query_run);
+									?>
+									<?php echo $row['0']; ?>
+								</div>
+								<!-- /.info-box-content -->
+							</div>
+							<!-- /.info-box -->
+						</div>
 					</div>
 
 				

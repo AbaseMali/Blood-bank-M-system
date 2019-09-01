@@ -3,7 +3,7 @@ ob_start();
 include('connection.php');
 
 
-$donor = mysqli_query($conn, "SELECT * FROM donor")
+
 ?>
 
 
@@ -24,30 +24,36 @@ $donor = mysqli_query($conn, "SELECT * FROM donor")
 				<th>Delete</th>
 				<th> Update </th>
 			</tr>
-			<?php while ($row = mysqli_fetch_array($donor)) {  ?>
+			<?php 
+			$donor = mysqli_query($conn, "SELECT * FROM donor");
+				$i=1;
+			while ($row = mysqli_fetch_array($donor)) { 
+				echo"
 				<tr>
-					<td><?php echo $row['donor_id']; ?></td>
-					<td><?php echo $row['full_name']; ?></td>
-					<td><?php echo $row['gender']; ?></td>
-					<td><?php echo $row['job']; ?></td>
-					<td><?php echo $row['martial_status']; ?></td>
-					<td><?php echo $row['blood_type']; ?></td>
-					<td><?php echo $row['email']; ?></td>
-					<td><?php echo $row['contact_no']; ?></td>
-					<td><?php echo $row['unit']; ?></td>
-					<!-- send to lab -->
-					<td><a class="btn btn-success " name="send" href="donor.php?did=<?php echo $row['donor_id']; ?>" onclick='return confirm("Are you You sure to send a lab")'><i class="fa fa-send"></i></a></td>
+					<td>$i</td>
+					<td> {$row['full_name']} </td>
+					<td> {$row['gender']} </td>
+					<td>{$row['job']} </td>
+					<td>{$row['martial_status']} </td>
+					<td>{$row['blood_type']} </td>
+					<td>{$row['email']} </td>
+					<td>{$row['contact_no']} </td>
+					<td>{$row['unit']} </td>
+					<td>	<a class=\"btn btn-success\" name=\"send\" href='donor.php?did={$row['donor_id']}' onclick='return confirm(\"Are you You sure to send a lab\")'><i class=\"fa fa-send\"></i></a></td>
 
 					<!-- delete -->
-					<td><a class="btn btn-danger " name="delete" href="donordelete.php?did=<?php echo $row['donor_id']; ?>" onclick='return confirm("Are you You sure to delete")'><i class="fa fa-trash"></i></a></td>
+					<td><a class=\"btn btn-danger\" name=\"delete\" href='donordelete.php?did={$row['donor_id']}' onclick='return confirm(\"Are you You sure to delete\")'><i class=\"fa fa-trash\"></i></a></td>
 
 					<!-- update -->
-					<td> <a class="btn btn-warning " name="update" href="donorUpdate.php?did=<?php echo $row['donor_id'];?>"> <i class="fa fa-edit"></i></a>
+					<td> <a class=\"btn btn-warning\" name=\"update\" href='donorUpdate.php?did={$row['donor_id']}'> <i class=\"fa fa-edit\"></i></a>
 					</td>
-				</tr>
+				</tr>";
 
 
-			<?php } ?>
+			  
+					$i++;
+			}
+			?>
 
 		</table>
 		<?php

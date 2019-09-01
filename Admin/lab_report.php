@@ -122,17 +122,13 @@
 <div class="lines">
 	  <table border="1" align="center" >
  	  <tr>
-      <th> Id </th>
-      <th> donor name </th>
-		 <th> gender </th>
-		<th> job </th>
-        <th> marital status</th>
-         <th> blood type </th>
-        <th> email</th>
-		<th> contact </th> 
-		<th> unit </th>
-		<th>creation date </th>
-		
+      <th> 	labid </th>
+      <th> donor_id</th>
+		 <th>  fullname  </th>
+		<th> gender </th>
+        <th> blood_type</th>
+         <th> unit</th>
+        <th> status</th>
 	 </tr>
      <?php 
 
@@ -149,9 +145,6 @@ while ($row= mysqli_fetch_array($sql)) {
 	        <td><?php echo$row['4']; ?></td>
             <td><?php echo$row['5']; ?></td>
 	  	 	<td><?php echo$row['6']; ?></td>
-	  	 	<td><?php echo$row['7']; ?></td>
-	  	 	<td><?php echo$row['8']; ?></td>
-	        <td><?php echo$row['9']; ?></td>
 	  	 </tr>
 
 	  	 <?php  } ?>
