@@ -38,15 +38,8 @@ if (!isset($_SESSION['username'])) {
 
                                 <button type="button" class="btn btn-warning px-md-5  " data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add Donor</button>
 
-                                <input type="submit" style="float:right" name="btnsearch" value="Search" id="" title="Search Student" class="btn btn-xm" />
-
-                                            <input type="text" style="float:right" name="searchtxt" title="Enter name for search " class="search" autocomplete="off" />
-                                            <div id="myDIV"> 
-                  <fieldset class="field">
-       <form action="delete.php" method="post">
-        <input class="txt"  type="text" name="del" placeholder="ID Number"  />
-    <input class="new" type="submit" name="dell" value="Delete" />
-    </form>  
+                              
+  
     </div>
                                   
 
