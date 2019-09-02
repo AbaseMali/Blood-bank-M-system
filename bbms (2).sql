@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2019 at 10:54 PM
+-- Generation Time: Sep 02, 2019 at 02:29 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `donor` (
 `donor_id` int(100) NOT NULL,
   `full_name` varchar(100) NOT NULL,
+  `dateTime` datetime NOT NULL,
   `gender` varchar(100) NOT NULL,
   `job` varchar(100) NOT NULL,
   `martial_status` varchar(100) NOT NULL,
@@ -37,17 +38,17 @@ CREATE TABLE IF NOT EXISTS `donor` (
   `contact_no` int(100) NOT NULL,
   `unit` int(11) NOT NULL,
   `creation_date` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `donor`
 --
 
-INSERT INTO `donor` (`donor_id`, `full_name`, `gender`, `job`, `martial_status`, `blood_type`, `email`, `contact_no`, `unit`, `creation_date`) VALUES
-(18, 'fatima', 'Female', 'designer', 'Single', 'O+', 'kariye88@hotmail.com', 987976878, 1000, '2019-08-21'),
-(19, 'Amal Abdirahman', 'Female', 'designer', 'Single', 'A+', 'amal@gmail.com', 987976878, 500, '0000-00-00'),
-(20, 'jama', 'M', 'student', 'Single', 'B-', 'hahsh@aha', 987976878, 1000, '0000-00-00'),
-(21, 'Amal ', 'Female', 'designer', 'Married', 'B+', 'amal@gmail.com', 987976878, 1000, '0000-00-00');
+INSERT INTO `donor` (`donor_id`, `full_name`, `dateTime`, `gender`, `job`, `martial_status`, `blood_type`, `email`, `contact_no`, `unit`, `creation_date`) VALUES
+(1, ' Amal Abdirahman', '2019-09-10 15:01:00', 'Female', 'student', 'Single', 'B-', 'amal@gmail.com', 987976878, 1000, '0000-00-00'),
+(3, '4444', '2019-03-03 15:03:00', 'Female', 'student', 'Married', 'A+', 'amal@gmail.com', 987976878, 1000, '0000-00-00'),
+(4, 'jama', '2019-09-09 08:08:00', 'Male', 'designer', 'Married', 'A+', 'abase.mohamed.ali@gmail.com', 987976878, 1000, '0000-00-00'),
+(5, 'Ahmed', '2019-09-12 13:59:00', 'Female', 'designer', 'Single', 'A+', 'cabdimaxed@hotmail.com', 987976878, 1000, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -59,54 +60,20 @@ CREATE TABLE IF NOT EXISTS `lab` (
 `labid` int(11) NOT NULL,
   `donor_id` int(11) NOT NULL,
   `fullname` varchar(100) NOT NULL,
+  `dateTime` datetime NOT NULL,
   `gender` varchar(100) NOT NULL,
   `blood_type` varchar(100) NOT NULL,
   `unit` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `lab`
 --
 
-INSERT INTO `lab` (`labid`, `donor_id`, `fullname`, `gender`, `blood_type`, `unit`, `status`) VALUES
-(1, 14, 'Mohamed', 'M', 'A+', '12', 'Positive'),
-(2, 14, 'Mohamed', 'M', 'A+', '12', 'Negative'),
-(3, 14, 'Mohamed', 'M', 'A+', '12', 'Negative'),
-(4, 16, 'Mohamed', 'M', 'A+', '12', 'Positive'),
-(5, 14, 'Mohamed', 'M', 'A+', '12', 'Negative'),
-(6, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(7, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(8, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(9, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(10, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(11, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(12, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(13, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(14, 15, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(15, 15, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(16, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(17, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(18, 14, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(19, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(20, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(21, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(22, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(23, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(24, 17, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(25, 16, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(26, 16, 'Mohamed', 'M', 'A+', '12', 'Sended'),
-(27, 19, 'Amal Abdirahman', 'Female', 'B+', '500', 'Sended'),
-(28, 19, 'Amal Abdirahman', 'Female', 'B+', '500', 'Sended'),
-(29, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(30, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(31, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(32, 19, 'Amal Abdirahman', 'Female', 'A+', '500', 'Sended'),
-(33, 19, 'Amal Abdirahman', 'Female', 'A+', '500', 'Sended'),
-(34, 19, 'Amal Abdirahman', 'Female', 'A+', '500', 'Sended'),
-(35, 19, 'Amal Abdirahman', 'Female', 'A+', '500', 'Sended'),
-(36, 18, 'fatima', 'Female', 'O+', '1000', 'Sended'),
-(37, 20, 'jama', 'M', 'B-', '1000', 'Negative');
+INSERT INTO `lab` (`labid`, `donor_id`, `fullname`, `dateTime`, `gender`, `blood_type`, `unit`, `status`) VALUES
+(7, 1, ' Amal Abdirahman', '2019-09-10 15:01:00', 'Female', 'B-', '1000', 'Sended'),
+(8, 3, '4444', '2019-03-03 15:03:00', 'Female', 'A+', '1000', 'Sended');
 
 -- --------------------------------------------------------
 
@@ -124,17 +91,15 @@ CREATE TABLE IF NOT EXISTS `request` (
   `email` varchar(100) NOT NULL,
   `hospital` varchar(100) NOT NULL,
   `unit` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `request`
 --
 
 INSERT INTO `request` (`request_id`, `name`, `gender`, `blood_group`, `date_time`, `phone`, `email`, `hospital`, `unit`) VALUES
-(1, 'Abase Mohamed', 'on', 'O+', '0000-00-00 00:00:00.000000', 987976878, 'Abase9201@admasuniversity.com', 'gargaar', 'Request'),
-(2, 'Fatima osman', 'on', 'B-', '0000-00-00 00:00:00.000000', 987976878, 'fatima@gmail.com', 'gargaar', 'Request'),
-(3, '', 'on', 'A+', '0000-00-00 00:00:00.000000', 0, '', '', 'Request'),
-(4, 'Abase Mohamed', 'on', 'O-', '0000-00-00 00:00:00.000000', 987976878, 'Abase9201@admasuniversity.com', 'gargaar', 'Request');
+(6, 'Abase Mohamed jama', 'Male', 'O+', '2018-10-03 03:20:00.000000', 987976878, 'cabdimaxed@hotmail.com', 'gargaar', '500ml'),
+(7, 'Abase Mohamed', 'Male', 'A+', '2019-08-31 03:00:00.000000', 987976878, 'Abase9201@admasuniversity.com', 'gargaar', '500ml');
 
 -- --------------------------------------------------------
 
@@ -157,10 +122,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `username`, `email`, `password`, `contact`, `type_of_user`) VALUES
-(2, 'Ahmed', 'abase', 'Abase9201@admasuniversity.com', '123', 987976878, 'Lab'),
-(4, 'jaajhas', 'jghagadjh', 'hahsh@aha', 'iuyahydha', 987976878, 'Lab'),
-(5, 'jaajhas', 'ab', 'kariye88@hotmail.com', '123', 987976878, 'Recipient'),
-(6, 'abas', 'abas', '', '123', 0, 'Admin');
+(4, 'jama', 'jamaMo', 'Jama@gmail.com', 'jama77', 5544, 'Recipient'),
+(5, 'Abase', 'abase', 'abase@gmail.com', 'abase88', 9988087, 'Lab'),
+(6, 'Amal', 'amaliza', 'amaliza@gmail.com', 'amal88', 4221937, 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -198,17 +162,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `donor`
 --
 ALTER TABLE `donor`
-MODIFY `donor_id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+MODIFY `donor_id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `lab`
 --
 ALTER TABLE `lab`
-MODIFY `labid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=38;
+MODIFY `labid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-MODIFY `request_id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `request_id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --
