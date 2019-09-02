@@ -33,7 +33,7 @@ include('../Admin/connection.php');
             <div class="row">
           <div class="form-group col-6">
             <label>Name </label>
-            <input type="text" name="name" id="name" class="form-control"  placeholder="Enter first name" required>
+            <input type="text" name="name" id="name" class="form-control" pattern="[A-Z_ ][Aa-z_ ]{3,30}" placeholder="Enter first name" required>
           </div>         
          
           <div class="form-group col-6">
@@ -59,20 +59,20 @@ include('../Admin/connection.php');
             </div>
             <div class="form-group col-6">
             <label>Date & Time </label> 
-            <input type="datetime-local" id="contact" name="dateTime" class="form-control"   required>
+            <input type="datetime-local" id="contact" name="dateTime" class="form-control"  required>
           </div> 
           <div class="form-group col-6">
             <label>Contact </label>
-            <input type="number" id="contact" name="contact" class="form-control" placeholder="Enter contact" required>
+            <input type="number" id="contact" name="contact" class="form-control" pattern="[0-9]{3,30}" placeholder="Enter contact" required>
           </div> 
             <div class="form-group col-6">
             <label>Email</label>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"  required>
+            <input type="email" id="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email"  required>
           </div>
 
           <div class="form-group col-6">
             <label>Hospital </label>
-            <input type="text" id="hospital" name="hospital" class="form-control" placeholder="Enter hospital" required>
+            <input type="text" id="hospital" name="hospital" class="form-control" pattern="[A-Z_ ][Aa-z_ ]{3,30}" placeholder="Enter hospital" required>
           </div>  
 
                

@@ -17,7 +17,7 @@
 
             <div class="form-group">
               <label>Full Name </label>
-              <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter first name" required>
+              <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter first name" pattern="[A-Z_ ][Aa-z_ ]{3,30}" required>
             </div>
 
             <div class="form-group col-6">
@@ -37,7 +37,7 @@
 
             <div class="form-group">
               <label>Job </label>
-              <input type="text" name="job" id="username" class="form-control" placeholder="Enter job" required>
+              <input type="text" name="job" id="username" class="form-control" pattern="[a-z]{3,30}" placeholder="Enter job" required>
             </div>
             <div class="row">
               <div class="form-group col-md-6">
@@ -63,11 +63,11 @@
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required>
+              <input type="email" name="email" id="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter Email" required>
             </div>
             <div class="form-group">
               <label>Contact </label>
-              <input type="number" name="contact" id="contact" class="form-control" placeholder="Enter contact" required>
+              <input type="number" name="contact" id="contact" class="form-control" pattern="[0-9]{3,30}" placeholder="Enter contact" required>
             </div>
 
             <div class="form-group col-md-6">
