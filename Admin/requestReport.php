@@ -1,22 +1,22 @@
-<?php 
- include('connection.php');
- $id=$_POST['donor_id'];	
- $startDate = $_POST['startDate'];
- $endDate = $_POST['endDate'];
- 
- 
-  ?>
+<?php
+include('connection.php');
+$id = $_POST['request_id'];
+$startDate = $_POST['startDate'];
+$endDate = $_POST['endDate'];
+
+
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Purchase Report</title>
+    <title>Request Report</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <style type="text/css">
         body {
             width: 1200px;
-			margin: 40px 0px 0px 10px;
+            margin: 40px 0px 0px 10px;
 
             padding: 0px;
             font-size: 16px;
@@ -28,18 +28,17 @@
         .report-header {
             background: rgb(178, 230, 212);
             color: rgb(102, 102, 102);
-			margin: 40px 10px 0px 100px;
+            margin: 40px 10px 0px 100px;
             padding: 15px;
             box-sizing: border-box;
             display: block;
             position: relative;
             text-align: center;
-			text-align: center
+            text-align: center
         }
 
         .report-header .logo {
-			ali
-            position: absolute;
+            ali position: absolute;
             top: 40px;
             left: 15px;
             width: 150px;
@@ -48,7 +47,7 @@
         .report-footer {
             background: rgb(178, 230, 212);
             color: rgb(102, 102, 102);
-			margin: 40px 10px 0px 300px;
+            margin: 40px 10px 0px 300px;
             padding: 15px;
             box-sizing: border-box;
             display: block;
@@ -59,7 +58,7 @@
         .report-body {
             width: 70%;
             display: inline-block;
-			margin: 40px 10px 0px 300px;
+            margin: 40px 10px 0px 300px;
             position: relative;
             padding: 15px;
             box-sizing: border-box;
@@ -77,7 +76,7 @@
         }
 
         .report-body .info {
-			margin: 40px 10px 0px 300px;
+            margin: 40px 10px 0px 300px;
             border: #ccc solid 1px;
             padding: 5px;
             display: block;
@@ -90,7 +89,7 @@
             padding: 5px;
             display: block;
             position: relative;
-			margin: 40px 10px 0px 300px;
+            margin: 40px 10px 0px 300px;
         }
 
         table {
@@ -114,56 +113,57 @@
 
 <body onload="window.print();window.close();">
 
-<div class="report-header">
-<h2 style="text-align: center">  BLOOD BANK MANAGEMENT SYSTEM </h2>
-</div>
-<form method="POST" >
-
- 
-<div class="info">
-<h5  style="text-align: center">DONOR REPORT</h5>  
-</div>
-<div class="lines">
-	  <table border="1" align="center" >
- 	  <tr>
-      <th> Id </th>
-      <th> donor name </th>
-		 <th> gender </th>
-		<th> job </th>
-        <th> marital status</th>
-         <th> blood type </th>
-        <th> email</th>
-		<th> contact </th> 
-		<th> unit </th>
-		<th>creation date </th>
-		
-	 </tr>
-     <?php 
+    <div class="report-header">
+        <h2 style="text-align: center"> BLOOD BANK MANAGEMENT SYSTEM </h2>
+    </div>
+    <form method="POST">
 
 
-$sql = mysqli_query($conn,"SELECT * FROM `donor` WHERE donor_id='$id' or dateTime BETWEEN  '$startDate' AND '$endDate'");
-while ($row= mysqli_fetch_array($sql)) { 
-    
- ?>
-	  	 <tr>
-	  	 	<td><?php echo$row['0']; ?></td>
-	  	 	<td><?php echo$row['1']; ?></td>
-	  	 	<td><?php echo$row['2']; ?></td>
-	  	 	<td><?php echo$row['3']; ?></td>
-	        <td><?php echo$row['4']; ?></td>
-            <td><?php echo$row['5']; ?></td>
-	  	 	<td><?php echo$row['6']; ?></td>
-	  	 	<td><?php echo$row['7']; ?></td>
-	  	 	<td><?php echo$row['8']; ?></td>
-	        <td><?php echo$row['9']; ?></td>
-	  	 </tr>
+        <div class="info">
+            <h5 style="text-align: center">DONOR REPORT</h5>
+        </div>
+        <div class="lines">
+            <table border="1" align="center">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Blood group</th>
+                    <th>Date and time</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Hospital</th>
+                    <th>Unit</th>
+                  
 
-	  	 <?php  } ?>
+                </tr>
+                <?php
 
-	
-	  </table>
-</div>
-</div>
-</form>
+
+                $sql = mysqli_query($conn, "SELECT * FROM `request` WHERE request_id='$id' or date_time BETWEEN  '$startDate' AND '$endDate'");
+                while ($row = mysqli_fetch_array($sql)) {
+
+                    ?>
+                    <tr>
+                        <td><?php echo $row['0']; ?></td>
+                        <td><?php echo $row['1']; ?></td>
+                        <td><?php echo $row['2']; ?></td>
+                        <td><?php echo $row['3']; ?></td>
+                        <td><?php echo $row['4']; ?></td>
+                        <td><?php echo $row['5']; ?></td>
+                        <td><?php echo $row['6']; ?></td>
+                        <td><?php echo $row['7']; ?></td>
+                        <td><?php echo $row['8']; ?></td>
+                     
+                    </tr>
+
+                <?php  } ?>
+
+
+            </table>
+        </div>
+        </div>
+    </form>
 </body>
+
 </html>

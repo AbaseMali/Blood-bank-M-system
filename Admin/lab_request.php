@@ -2,25 +2,25 @@
 <html lang="en">
 <!-- BEGIN HEAD -->
 <?php
-include('lab_headerScript.php');
+include('include/headerScript.php');
 session_start();
 if(!isset($_SESSION['username'])){
 echo "<script>window.open('../index.php','_self')</script>";
 }
 else{
-include('../Admin/connection.php');
+include('connection.php');
 ?>
 
 
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white white-sidebar-color logo-indigo">
     <div class="page-wrapper">
         <!-- Top menu page -->
-        <?php include("lab_topmenu.php") ?>
+        <?php include("include/topmenu.php") ?>
         <!-- end top menu page -->
         <!-- start page container -->
         <div class="page-container">
             <!-- Sidebar menu page -->
-            <?php include("lab_sidemenu.php") ?>
+            <?php include("include/sidemenu.php") ?>
             <!-- end sidebar menu page -->
             <!-- start page content -->
             <div class="page-content-wrapper">
@@ -30,7 +30,7 @@ include('../Admin/connection.php');
 
                     <?php
 
-                    include('../Admin/connection.php');
+                    include('connection.php');
 
 
                     $donor = mysqli_query($conn, "SELECT * FROM lab where status='Sended'");
@@ -46,8 +46,6 @@ include('../Admin/connection.php');
                                     <th>Gender</th>
                                     <th>Blood Type</th>
                                     <th>Unit</th>
-                                    <th>Negative</th>
-                                    <th>Positive</th>
                                     <th>Delete </th>
 
                                 </tr>
@@ -60,41 +58,13 @@ include('../Admin/connection.php');
                                         <td><?php echo $row['gender']; ?> </td>
                                         <td><?php echo $row['blood_type']; ?> </td>
                                         <td><?php echo $row['unit']; ?> </td>
-                                        <td><a class="btn btn-success" href="lab_request.php?labidn=<?php echo $row['labid']; ?>">Negative</a></td>
-                                        <td><a class="btn btn-warning" href="lab_request.php?labidp=<?php echo $row['labid']; ?>">Positive</a></td>
                                         <td><a class="btn btn-danger" href="deletelab.php?labidp=<?php echo $row['labid']; ?>" onclick='return confirm("Are you You sure to delete")'>delete</a></td>
 
                                     </tr>
                                 <?php } ?>
                             </table>
-                            <?php
-                            if (isset($_GET['labidn'])) {
-
-                                $labidn = $_GET['labidn'];
-
-                                $sql = mysqli_query($conn, "UPDATE `lab` SET `status`='Negative' WHERE labid='$labidn'");
-
-                                if ($sql) {
-
-                                    // header("location: lab_result.php");
-                                }
-                            }
-
-                            ?>
-                            <?php
-                            if (isset($_GET['labidp'])) {
-
-                                $labidp = $_GET['labidp'];
-
-                                $query = mysqli_query($conn, "UPDATE `lab` SET `status`='Positive' WHERE labid='$labidp'");
-
-                                if ($query) {
-
-                                    header("location: lab_result.php");
-                                }
-                            }
-
-                            ?>
+                         
+                          
                         </div>
                     </div>
 
@@ -113,11 +83,11 @@ include('../Admin/connection.php');
     </div>
     <!-- end page container -->
     <!-- start footer -->
-    <?php include("lab_footer.php") ?>
+    <?php include("include/footer.php") ?>
     <!-- end footer -->
     </div>
     <?php
-    include('lab_footerScript.php');
+    include('include/footerScript.php');
     ?>
 </body>
 

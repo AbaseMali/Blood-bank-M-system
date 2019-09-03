@@ -57,6 +57,22 @@ if (!isset($_SESSION['username'])) {
                           <button name="Print"  style="margin-left:120px;  color: red">Report</button> </form>                      
                       </div>
 
+                      <div class="card text-white bg-dark mb-4 col-md-4" style="width: 378px; margin:0px  20px 20px 2px; display:inline-block;">
+                            
+                            <div class="card-body">
+                              <h5 class="card-title">Request blood report by Date</h5>
+                              <form action="requestReport.php" method="POST">
+                           <p > Start-Date : <input type="date" name="startDate" >
+                           </p>  
+                           <p > &nbsp; End-Date :&nbsp; <input type="date" name="endDate">
+                           </p>   
+                           <h5 class="card-title">Select donor by Id</h5> 
+                           <p > &nbsp; Id :&nbsp; <input type="input" name="request_id">
+                           </p>                         
+                          </div>
+                          <button name="Print"  style="margin-left:120px;  color: red">Report</button> </form>                      
+                      </div>
+
 
                      
                                </div>

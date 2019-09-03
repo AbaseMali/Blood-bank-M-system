@@ -28,7 +28,9 @@ if (!isset($_SESSION['username'])) {
                         <div class="container-fluid">
                             <!-- DataTales Example -->
                             <div class="card shadow mb-4">
-
+                            <div class="card-header">
+                            <a href='request.php'  class="btn btn-success">Request</a></td>  
+                            </div>
                                 <div class="card-body">
 
                                     <div class="table-responsive">

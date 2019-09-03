@@ -15,7 +15,7 @@
 	                                </div>
 	                                <div class="pull-left info">
 	                                    <p> Admin</p>
-	                                    <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline"> Online</span></a>
+	                           	         <a href="#"><i class="fa fa-circle user-online"></i><span class="txtOnline"> Online</span></a>
 	                                </div>
 	                            </div>
 	                        </li>
@@ -52,6 +52,13 @@
 	                            <a href="labResult.php" class="nav-link nav-toggle"> 
 									<i class="material-icons">event_note</i>
 	                                <span class="title">Lab results </span> </span>
+	                            </a>
+							</li>
+							
+							<li class="nav-item">
+	                            <a href="lab_request.php" class="nav-link nav-toggle"> 
+									<i class="material-icons">event_note</i>
+	                                <span class="title">Sent donors </span> </span>
 	                            </a>
 	                        </li>
 							
